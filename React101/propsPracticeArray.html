@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>React 101</title>
+    <title>Props Practice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
@@ -16,21 +16,23 @@
 
     <div id="root"></div>
 
+    <script type="text/javascript" src="data.js"></script>
     <script type="text/babel" src="Card.js"></script>
     <script type="text/babel">
     // ReactDOM.render takes the React element and puts them in the actual DOM.
     // It needs to know:
     // --What
-    
-        ReactDOM.render(
-        <div className="row">    
-            <Card title="React. From the Beginning" />
-            <Card title="Unity Game Dev" />
-            <Card title="Apache Kafka" />
-            <Card title="Whirlwinds" />
-        </div>,
-            document.getElementById('root')
-);
+        const root = document.getElementById('root');
+        let cards = data.map((obj) => {
+            return <Card data={obj} />
+        })
+        console.log(cards)
+        const app =
+        <div className="row">   
+           {cards}
+        </div>
+
+        ReactDOM.render(app, root);
     </script>
 
 
