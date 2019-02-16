@@ -1,0 +1,36 @@
+.checklist{
+    border: 5px solid orange;
+    margin: 5px;
+}
+
+.search-bar{
+    border: 2px solid blue;
+    margin: 5px;
+}
+
+.product-table{
+    border: 2px solid green;
+    margin: 5px;
+}
+
+.product-category-row{
+    border: 2px solid cyan;
+    margin: 5px;
+}
+.product-row{
+    border: 2px solid red;
+    margin: 5px;
+}
+
+.productName{
+    padding: 2px;
+    margin-right: 5px;
+}
+
+.productPrice{
+    padding: 2px;
+}
+
+.product-table-name{
+    margin-right: 50px;
+}
