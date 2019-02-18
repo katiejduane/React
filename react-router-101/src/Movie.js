@@ -10,9 +10,11 @@ class Movie extends Component {
         }
     }
 
-    componentWillReceiveProps(newProps) {
-        console.log(newProps);
-        const mid = newProps.match.params.movieId;
+    componentDidMount() {
+        // React Router adds these prop to all components: MATCH = params/wildcard,
+        // HISTORY = all the past history of react router
+        // location = same as match, but without the bulk
+        const mid = this.props.match.params.movieId;
         axios.get(`https://api.themoviedb.org/3/movie/${mid}?api_key=fec8b5ab27b292a68294261bb21b04a5`)
             .then((movieData) => {
                 console.log(movieData);
@@ -22,11 +24,9 @@ class Movie extends Component {
             })
     }
 
-    componentDidMount() {
-        // React Router adds these prop to all components: MATCH = params/wildcard,
-        // HISTORY = all the past history of react router
-        // location = same as match, but without the bulk
-        const mid = this.props.match.params.movieId;
+    componentWillReceiveProps(newProps) {
+        console.log(newProps);
+        const mid = newProps.match.params.movieId;
         axios.get(`https://api.themoviedb.org/3/movie/${mid}?api_key=fec8b5ab27b292a68294261bb21b04a5`)
             .then((movieData) => {
                 console.log(movieData);

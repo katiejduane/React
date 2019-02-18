@@ -34,7 +34,7 @@ class App extends Component {
         as you would without react router. */}
         {/* EXAMPLE OF ANON FUNCTION w PROPS: */}
           {/* <Route exact path="/" render={(props)=>{
-            <Home props={props} />
+            return <Home props={props} />
           }} /> */}
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />

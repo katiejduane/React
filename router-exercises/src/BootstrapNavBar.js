@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 class BootstrapNavBar extends Component{
   render(){
@@ -6,14 +7,13 @@ class BootstrapNavBar extends Component{
 		<nav className="navbar navbar-default navbar-fixed-top">
 		  <div className="container-fluid">
 		    <div className="navbar-header">
-		      <a className="navbar-brand" href="#">WebSiteName</a>
+		      <a className="navbar-brand" href="http://www.google.com">ALL About ATL!</a>
 		    </div>
 		    <ul className="nav navbar-nav">
-		    	<li><a href="/">Home</a></li>
-		      	<li><a href="/one">One</a></li>
-		      	<li><a href="/two">Two</a></li>
-		      	<li><a href="/three">Three</a></li>
-		      	<li><a href="/four">Four</a></li>
+						<li><Link to="/">Home</Link></li>
+		      	<li><Link to="/about">About</Link></li>
+		      	<li><Link to="/images">Photos</Link></li>
+		      	<li><Link to="/weather">Weather</Link></li>
 		    </ul>
 		  </div>
 		</nav>    
