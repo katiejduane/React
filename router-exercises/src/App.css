@@ -3,7 +3,7 @@
 }
 
 .main{
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .page-title {
@@ -13,4 +13,12 @@
 .atl-pic{
   width: 500px;
   margin: 10px;
+}
+
+a {
+  padding: 1rem;
+}
+
+.active {
+  background-color: papayawhip;
 }
