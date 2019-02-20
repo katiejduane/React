@@ -24,7 +24,40 @@ router.post('/addTask', (req, res, next)=>{
         res.json(results2)
       })
     });
-  // res.json({taskName, taskDate})
 })
+
+router.get('/getTasks',(req, res, next)=>{
+  const getTaskQuery = `SELECT * FROM tasks`;
+  connection.query(getTaskQuery, (error, results) => {
+    if (error) { throw error }
+    res.json(results)
+  })
+})
+
+router.get('/getTask/:tid', (req, res, next)=>{
+  const tid = req.params.tid;
+  const selectTaskQuery = `SELECT * FROM tasks WHERE id =?`;
+  connection.query(selectTaskQuery, [tid], (err, result)=>{
+    if(err) {throw err}
+    res.json({task:result[0]});
+  })
+})
+
+router.post('/edit', (req, res, next)=>{
+  const id = req.body.id;
+  const taskName = req.body.task.taskName;
+  const taskDate = req.body.task.taskDate.substring(0,10);
+  const updateQuery = `UPDATE tasks SET taskName = ?, taskDate = ?
+    WHERE id =?`;
+  connection.query(updateQuery, [taskName, taskDate, id], (error, results)=>{
+    if(error){throw error};
+    res.json({
+      msg: "updated"
+    })
+  })
+});
+
+
+
 
 module.exports = router;
